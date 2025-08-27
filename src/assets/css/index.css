@@ -95,11 +95,11 @@ main {
 }
 
 .todos-form {
-        background-color: var(--color-hover);
-    padding: 1rem;
-    display: grid;
-    align-items: center;
-    grid-template-columns: auto 1fr auto;
+  background-color: var(--color-hover);
+  padding: 1rem;
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr auto;
 }
 
 .todos-form_icon {
@@ -119,25 +119,25 @@ main {
   align-items: center;
 }
 
-.todos-form_submit{
-    display: flex;
-    height: 100%;
+.todos-form_submit {
+  display: flex;
+  height: 100%;
 }
 
 .todos-form_form textarea {
-        width: 100%;
-    height: 100%;
-    padding-top: 20px;
-    padding-inline: 10px;
-    resize: none;
-    background-color: #1c1a23;
-    border: none;
-    outline: none;
-    font-size: 20px;
-    font-family: var(--font-family);
-    color: #dddce3;
-    font-weight: 500;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  padding-top: 20px;
+  padding-inline: 10px;
+  resize: none;
+  background-color: #1c1a23;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  font-family: var(--font-family);
+  color: #dddce3;
+  font-weight: 500;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
 }
 .todos-todo_cta-bookmark,
 .todos-todo_icon,
@@ -147,7 +147,7 @@ main {
   align-items: center;
 }
 .btn {
-height: 100%;
+  height: 100%;
   font-size: 1.25rem;
   font-family: var(--font-family);
   padding: 0.5rem 1.5rem;
@@ -196,8 +196,7 @@ height: 100%;
   font-size: 20px;
   font-weight: 500;
   word-break: break-word;
-    white-space: pre-wrap;
-  /* dr */
+  white-space: pre-wrap;
 }
 .todos-todo_cta {
   display: flex;
