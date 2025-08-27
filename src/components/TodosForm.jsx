@@ -7,8 +7,6 @@ function TodosForm({addNewTodo , toggleFilter , mode , activeTodo}) {
   const [title, setTitle] = useState("");
   const [editRender, setEditRender] = useState(false)
  
- 
-
 
  
     if(mode === "edit" && !editRender){
@@ -17,9 +15,6 @@ function TodosForm({addNewTodo , toggleFilter , mode , activeTodo}) {
     }
   
 
- 
-    
- 
 
   function handleTitleChange(e) {
     setTitle(e.target.value)  ;
@@ -43,10 +38,16 @@ function TodosForm({addNewTodo , toggleFilter , mode , activeTodo}) {
     if(!title.trim()){
       return
     }
-    if (event.key === 'Enter') {
-      addNewTodo(title)
-      setTitle('')
-    }
+      if (event.key === 'Enter') {
+          if (!event.shiftKey) {
+              // Enter عادي → اضيف تودو
+              addNewTodo(title);
+              setTitle('');
+              event.preventDefault(); // منع أي سلوك افتراضي
+          }
+          // لو Shift + Enter → خليها تعمل سطر جديد طبيعي
+          // مش محتاج تعمل حاجة، default behavior هيمشي
+      }
   }
 
   return (
@@ -55,7 +56,7 @@ function TodosForm({addNewTodo , toggleFilter , mode , activeTodo}) {
       <FeatherIcon icon="circle" />
       </div>
       <div className='todos-form_form'>
-        <input onKeyUp={handleKeyUpToAddNewTodo}  value= {title} onChange={handleTitleChange} type="text" placeholder='اضف مهمة جديدة' />
+        <textarea onKeyUp={handleKeyUpToAddNewTodo}  value= {title} onChange={handleTitleChange}  placeholder='اضف مهمة جديدة' />
       </div>
       <div className='todos-form_submit'>
         <button disabled = {!title.trim()} onClick={ () => handleAddNewTodo()} className='btn '> {mode === "edit" ? "تعديل" : "اضافة"} </button>
